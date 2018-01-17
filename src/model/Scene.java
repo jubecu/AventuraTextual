@@ -11,14 +11,30 @@ public class Scene extends InteractiveEntity {
 
 	private String description;
 	private ArrayList<Prop> props;
+	private Interaction[] acciones;
 
 	public Scene(String id) {
 		super(id);
+		acciones=new Interaction[10];
+		//acciones[0]=
 	}
 
 	@Override
 	public String getDescription() {
 		return description;
+	}
+	
+	public void setDescription(String description){
+		this.description=description;
+	}
+	
+	public void addAvailableActions(Interaction accion){
+		for(int i=0;i<acciones.length;i++){
+			if(acciones[i]==null){
+				acciones[i]=accion;
+				break;
+			}
+		}
 	}
 
 	@Override
