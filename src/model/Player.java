@@ -2,12 +2,12 @@ package model;
 
 import actions.Interaction;
 
-public class Player extends InteractiveEntity{
-	
-	public static String PLAYER_ID="  Player";
+public class Player extends InteractiveEntity {
+
+	public static String PLAYER_ID = "  Player";
 	private Scene currentScene;
 
-	public Player(){
+	public Player() {
 		super(PLAYER_ID);
 	}
 
@@ -20,12 +20,12 @@ public class Player extends InteractiveEntity{
 	public Interaction[] getAvailableActions() {
 		return null;
 	}
-	
-	public void setCurrentScene(Scene scene){
-		this.currentScene=scene;
+
+	public void setCurrentScene(Scene scene) {
+		this.currentScene = scene;
 	}
-	
-	public Scene getCurrentScene(){
+
+	public Scene getCurrentScene() {
 		return currentScene;
 	}
 }

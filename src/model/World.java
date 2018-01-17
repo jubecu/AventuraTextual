@@ -18,7 +18,7 @@ public class World {
 			instance = new World();
 		return instance;
 	}
-	
+
 	public Player getPlayer() {
 		return player;
 	}
@@ -39,8 +39,8 @@ public class World {
 		}
 		scenes.remove(escenaBorrar);
 	}
-	
-	public Scene getScene(String id){
+
+	public Scene getScene(String id) {
 		Scene escenaDevolver = null;
 		Iterator<Scene> iterador = scenes.iterator();
 		while (iterador.hasNext()) {
@@ -54,7 +54,7 @@ public class World {
 	}
 
 	public void sendMessageToScene(String id, SceneMessage message) {
-
+		getScene(id).handleSceneMessage(message);
 	}
 
 	public void addEntity(InteractiveEntity entity) {
@@ -75,7 +75,16 @@ public class World {
 	}
 
 	public void sendMessageToEntity(String id, InteractiveEntityMessage message) {
-
+		InteractiveEntity entidadConcreta = null;
+		Iterator<InteractiveEntity> iterador = interactiveEntities.iterator();
+		while (iterador.hasNext()) {
+			InteractiveEntity entidad = iterador.next();
+			if (entidad.getId().compareTo(id) == 0) {
+				entidadConcreta = entidad;
+				break;
+			}
+		}
+		entidadConcreta.handleEntityMessage(message);
 	}
 
 }
