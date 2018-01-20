@@ -8,6 +8,10 @@ public abstract class Prop extends InteractiveEntity {
 		super(id);
 	}
 
+	public boolean getValor() {
+		return true;
+	}
+
 	@Override
 	public String getDescription() {
 		return null;

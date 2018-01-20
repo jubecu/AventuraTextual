@@ -3,6 +3,7 @@ package ejecucion;
 import actions.Interaction;
 import actions.InteractiveEntityMessage;
 import model.Prop;
+import model.World;
 
 public class Elemento extends Prop {
 
@@ -29,8 +30,8 @@ public class Elemento extends Prop {
 
 	public void setDescription2(String description) {
 		description2 = description;
-		if (description == null)
-			description = description2;
+		if (this.description == null)
+			this.description = description2;
 	}
 
 	public void addAvailableActions(Interaction accion) {
@@ -45,6 +46,11 @@ public class Elemento extends Prop {
 	@Override
 	public Interaction[] getAvailableActions() {
 		return acciones;
+	}
+
+	@Override
+	public boolean getValor() {
+		return valor;
 	}
 
 	public void setValor() {
