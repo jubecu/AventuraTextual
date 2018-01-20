@@ -9,8 +9,8 @@ import actions.SceneMessage;
 public class World {
 
 	Player player;
-	private ArrayList<Scene> scenes;
-	private ArrayList<InteractiveEntity> interactiveEntities;
+	private ArrayList<Scene> scenes=new ArrayList<Scene>();
+	private ArrayList<InteractiveEntity> interactiveEntities=new ArrayList<InteractiveEntity>();
 	private static World instance = null;
 
 	public static World getInstance() {
@@ -59,6 +59,8 @@ public class World {
 
 	public void addEntity(InteractiveEntity entity) {
 		interactiveEntities.add(entity);
+		if(entity.getId().compareTo("Player")==0)
+			player=(Player) entity;
 	}
 
 	public void removeEntity(String id) {
@@ -72,6 +74,19 @@ public class World {
 			}
 		}
 		scenes.remove(entidadBorrar);
+	}
+	
+	public InteractiveEntity getEntity(String id){
+		InteractiveEntity entidadDevolver = null;
+		Iterator<InteractiveEntity> iterador = interactiveEntities.iterator();
+		while (iterador.hasNext()) {
+			InteractiveEntity entidad = iterador.next();
+			if (entidad.getId().compareTo(id) == 0) {
+				entidadDevolver = entidad;
+				break;
+			}
+		}
+		return entidadDevolver;
 	}
 
 	public void sendMessageToEntity(String id, InteractiveEntityMessage message) {

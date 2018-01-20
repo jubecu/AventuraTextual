@@ -4,11 +4,13 @@ import actions.Interaction;
 
 public class Player extends InteractiveEntity {
 
-	public static String PLAYER_ID = "  Player";
+	public static String PLAYER_ID = "Player";
 	private Scene currentScene;
+	private Interaction[] acciones;
 
 	public Player() {
 		super(PLAYER_ID);
+		acciones = new Interaction[10];
 	}
 
 	@Override
@@ -16,9 +18,18 @@ public class Player extends InteractiveEntity {
 		return "El jugador está en la escena tal y lleva los objetos tal";
 	}
 
+	public void addAvailableActions(Interaction accion) {
+		for (int i = 0; i < acciones.length; i++) {
+			if (acciones[i] == null) {
+				acciones[i] = accion;
+				break;
+			}
+		}
+	}
+
 	@Override
 	public Interaction[] getAvailableActions() {
-		return null;
+		return acciones;
 	}
 
 	public void setCurrentScene(Scene scene) {

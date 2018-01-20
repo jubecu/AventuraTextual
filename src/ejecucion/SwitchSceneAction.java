@@ -31,9 +31,7 @@ public class SwitchSceneAction extends Interaction implements SceneMessage {
 
 	@Override
 	public void doAction() {
-		Scene escenaObjetivo;
-		escenaObjetivo = World.getInstance().getScene(targetSceneId);
-		World.getInstance().getPlayer().setCurrentScene(escenaObjetivo);
+		World.getInstance().getPlayer().setCurrentScene(World.getInstance().getScene(targetSceneId));
 	}
 
 }

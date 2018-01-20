@@ -1,6 +1,7 @@
 package ejecucion;
 
 import actions.Interaction;
+import actions.InteractiveEntityMessage;
 import model.Prop;
 
 public class Elemento extends Prop {
@@ -54,6 +55,11 @@ public class Elemento extends Prop {
 			valor = true;
 			description = description1;
 		}
+	}
+
+	@Override
+	public void handleEntityMessage(InteractiveEntityMessage message) {
+		setValor();
 	}
 
 }

@@ -16,7 +16,7 @@ public class Scene extends InteractiveEntity {
 	public Scene(String id) {
 		super(id);
 		acciones = new Interaction[10];
-		// acciones[0]=
+		props = new ArrayList<Prop>();
 	}
 
 	@Override
