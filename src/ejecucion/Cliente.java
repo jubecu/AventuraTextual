@@ -28,7 +28,7 @@ public class Cliente {
 		elemento2.setDescription1("La puerta este está abierta");
 		elemento2.setDescription2("La puerta este está cerrada");
 		SwitchSceneAction accion2 = new SwitchSceneAction("Habitación 3");
-		// elemento2.addAvailableActions(accion2);
+		elemento2.addAvailableActions(accion2);
 		escena1.addProp(elemento2);
 
 		escena1.addAvailableActions(accion1);

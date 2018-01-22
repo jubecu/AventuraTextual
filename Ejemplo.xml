@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ejemplo>
+	<Escena>
+		<id>Habitación 1</id>
+		<description>Te encuentras en una habitación con dos puertas (una al norte y una al este).</description>
+		<elemento>
+			<id>Puerta norte</id>
+			<description1>La puerta norte está abierta</description1>
+			<description2>La puerta norte está cerrada</description2>
+			<valor>true</valor>
+			<accion>
+				<tipo>Cambiar escena</tipo>
+				<id>Habitación 2</id>
+				<description>Ir al norte</description>
+			</accion>
+		</elemento>
+		<elemento>
+			<id>Puerta este</id>
+			<description1>La puerta este está abierta</description1>
+			<description2>La puerta este está cerrada</description2>
+			<valor>false</valor>
+			<accion>
+				<tipo>Cambiar escena</tipo>
+				<id>Habitación 3</id>
+				<description>Ir al este</description>
+			</accion>
+		</elemento>
+	</Escena>
+	<Escena>
+		<id>Habitación 2, la buena</id>
+		<description>Esta habitación sólo tiene una salida al sur. En el otro extremo de la habitación hay un cuadro.</description>
+		<elemento>
+			<id>Cuadro</id>
+			<description1>Detrás del cuadro se encuentra una llave</description1>
+			<description2>Detrás del cuadro no hay nada</description2>
+			<valor>true</valor>
+			<accion>
+				<tipo>Examinar objeto</tipo>
+				<id>Examninar cuadro</id>
+				<description>Has cogido una llave que había detrás</description>
+			</accion>
+		</elemento>
+		<elemento>
+			<id>Puerta sur</id>
+			<description1>La puerta sur está abierta</description1>
+			<description2>La puerta sur está cerrada</description2>
+			<valor>true</valor>
+			<accion>
+				<tipo>Cambiar escena</tipo>
+				<id>Habitación 1</id>
+				<description>Ir al sur</description>
+			</accion>
+		</elemento>
+	</Escena>
+	<Escena>
+		<id>Habitación 3</id>
+	</Escena>
+</Ejemplo>
+
+

@@ -15,7 +15,7 @@ public class Player extends InteractiveEntity {
 
 	@Override
 	public String getDescription() {
-		return "El jugador está en la escena tal y lleva los objetos tal";
+		return "El jugador está en la escena " + currentScene.id;
 	}
 
 	public void addAvailableActions(Interaction accion) {
