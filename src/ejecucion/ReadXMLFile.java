@@ -18,12 +18,34 @@ import model.Player;
 import model.Scene;
 import model.World;
 
+/**
+ * Clase que parsea un archivo xml, implementa la historia con los datos
+ * sacados y la ejecuta e interacciona con ella.
+ * 
+ * @author Juan Francisco Benito Cuesta
+ *
+ */
 public class ReadXMLFile {
 
+	/**
+	 * Escena donde comienza la historia
+	 */
 	private static String escenaInicial;
+	/**
+	 * Escena donde acaba la historia
+	 */
 	private static String escenaFinal;
+	/**
+	 * Scanner para introducir valores por teclado
+	 */
 	private static Scanner sc;
 
+	/**
+	 * Main que implementa los métodos para parsear el archivo xml y que luego
+	 * interacciona con los datos sacados.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		SAXParser saxParser = null;
@@ -36,6 +58,8 @@ public class ReadXMLFile {
 		}
 
 		DefaultHandler handler = new DefaultHandler() {
+			//Variables que corresponden con las etiquetas del archivo xml
+			//y otras que son necesarias para un parseo correcto
 			boolean bEscena = false;
 			boolean contEsc = false;
 			boolean bidEscena = false;
@@ -60,6 +84,10 @@ public class ReadXMLFile {
 			private ExaminarObjetoAction examinarObjeto;
 			private boolean primeraEscena = true;
 
+			/**
+			 * Método que es llamado cada vez que el parser lee una etiqueta
+			 * de apertura, y pone las variables anteriores a true.
+			 */
 			public void startElement(String uri, String localName, String qName, Attributes attributes)
 					throws SAXException {
 				if (qName.equalsIgnoreCase("Escena"))
@@ -97,6 +125,10 @@ public class ReadXMLFile {
 					bdespuesExaminar = true;
 			}
 
+			/**
+			 * Método que es llamado cada vez que el parser lee una etiqueta
+			 * de cierre, y pone las variables de los elementos principales a false.
+			 */
 			public void endElement(String uri, String localName, String qName) throws SAXException {
 				if (qName.equalsIgnoreCase("Escena")) {
 					bEscena = false;
@@ -112,6 +144,9 @@ public class ReadXMLFile {
 				}
 			}
 
+			/**
+			 * Recoge los valores que se encuentran entre las etiquetas.
+			 */
 			public void characters(char ch[], int start, int lenght) throws SAXException {
 				if (bEscena) {
 					if (!contEsc) {

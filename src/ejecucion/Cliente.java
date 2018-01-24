@@ -7,10 +7,25 @@ import actions.SwitchSceneAction;
 import java.util.Scanner;
 import model.*;
 
+/**
+ * Clase que implementa y ejecuta un ejemplo en bruto.
+ * 
+ * @author Juan Francisco Benito Cuesta
+ *
+ */
 public class Cliente {
 
+	/**
+	 * Scanner para introducir valores por teclado
+	 */
 	private static Scanner sc;
 
+	/**
+	 * Main donde implementamos ese ejemplo y al final lo ejecutamos
+	 * e interactuamos con él.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		sc = new Scanner(System.in);
