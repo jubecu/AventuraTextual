@@ -1,6 +1,9 @@
 package ejecucion;
 
+import actions.ExaminarObjetoAction;
 import actions.Interaction;
+import actions.SwitchSceneAction;
+
 import java.util.Scanner;
 import model.*;
 

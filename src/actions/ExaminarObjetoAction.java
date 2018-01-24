@@ -1,15 +1,12 @@
-package ejecucion;
+package actions;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import actions.Interaction;
-import actions.InteractiveEntityMessage;
-import actions.SceneMessage;
 import model.Scene;
 import model.World;
 
-public class ExaminarObjetoAction extends Interaction implements SceneMessage{
+public class ExaminarObjetoAction extends Interaction implements SceneMessage {
 	private boolean vista;
 	private String description;
 	private String despuesExaminar;
@@ -17,12 +14,11 @@ public class ExaminarObjetoAction extends Interaction implements SceneMessage{
 
 	public ExaminarObjetoAction() {
 		vista = false;
-		elementosAfecta=new ArrayList<String>();
+		elementosAfecta = new ArrayList<String>();
 	}
 
 	@Override
 	public void handleSceneMessage(Scene scene) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -30,16 +26,16 @@ public class ExaminarObjetoAction extends Interaction implements SceneMessage{
 	public String getDescription() {
 		return description;
 	}
-	
-	public void setDescription(String description){
-		this.description=description;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
-	public void setDespuesExaminar(String cadena){
-		despuesExaminar=cadena;
+
+	public void setDespuesExaminar(String cadena) {
+		despuesExaminar = cadena;
 	}
-	
-	public void addElementoAfecta(String id){
+
+	public void addElementoAfecta(String id) {
 		elementosAfecta.add(id);
 	}
 

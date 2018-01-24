@@ -10,20 +10,18 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import actions.ExaminarObjetoAction;
 import actions.Interaction;
+import actions.SwitchSceneAction;
+import model.Elemento;
 import model.Player;
 import model.Scene;
 import model.World;
 
 public class ReadXMLFile {
 
-	private static Scene escena;
-	private static Elemento elemento;
-	private static SwitchSceneAction cambiarEscena;
-	private static ExaminarObjetoAction examinarObjeto;
 	private static String escenaInicial;
 	private static String escenaFinal;
-	private static boolean primeraEscena = true;
 	private static Scanner sc;
 
 	public static void main(String[] args) {
@@ -56,6 +54,11 @@ public class ReadXMLFile {
 			String tipo = null;
 			boolean belementosAfecta = false;
 			boolean bdespuesExaminar = false;
+			private Scene escena;
+			private Elemento elemento;
+			private SwitchSceneAction cambiarEscena;
+			private ExaminarObjetoAction examinarObjeto;
+			private boolean primeraEscena = true;
 
 			public void startElement(String uri, String localName, String qName, Attributes attributes)
 					throws SAXException {

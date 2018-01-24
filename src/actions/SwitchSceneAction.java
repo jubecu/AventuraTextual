@@ -1,7 +1,5 @@
-package ejecucion;
+package actions;
 
-import actions.Interaction;
-import actions.SceneMessage;
 import model.*;
 
 public class SwitchSceneAction extends Interaction implements SceneMessage {
@@ -15,7 +13,6 @@ public class SwitchSceneAction extends Interaction implements SceneMessage {
 
 	@Override
 	public void handleSceneMessage(Scene scene) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -30,7 +27,7 @@ public class SwitchSceneAction extends Interaction implements SceneMessage {
 
 	@Override
 	public void doAction() {
-		if (targetSceneId == "Habitación 3") {
+		if (targetSceneId.compareTo("Habitación 3") == 0) {
 			if (World.getInstance().getScene("Habitación 1").getProp("Puerta este").getValor())
 				World.getInstance().getPlayer().setCurrentScene(World.getInstance().getScene(targetSceneId));
 			else

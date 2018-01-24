@@ -1,8 +1,7 @@
-package ejecucion;
+package model;
 
 import actions.Interaction;
 import actions.InteractiveEntityMessage;
-import model.Prop;
 
 public class Elemento extends Prop {
 
