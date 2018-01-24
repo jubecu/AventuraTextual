@@ -21,6 +21,7 @@ public class Cliente {
 		elemento1.setDescription2("La puerta norte está cerrada");
 		elemento1.setValor();
 		SwitchSceneAction accion1 = new SwitchSceneAction("Habitación 2");
+		accion1.setDescription("Ir al norte");
 		elemento1.addAvailableActions(accion1);
 		escena1.addProp(elemento1);
 		// Elemento puerta este con sus descripciones y acciones
@@ -28,6 +29,7 @@ public class Cliente {
 		elemento2.setDescription1("La puerta este está abierta");
 		elemento2.setDescription2("La puerta este está cerrada");
 		SwitchSceneAction accion2 = new SwitchSceneAction("Habitación 3");
+		accion2.setDescription("Ir al este");
 		elemento2.addAvailableActions(accion2);
 		escena1.addProp(elemento2);
 
@@ -53,9 +55,14 @@ public class Cliente {
 		elemento4.setDescription2("La puerta sur está cerrada");
 		elemento4.setValor();
 		SwitchSceneAction accion3 = new SwitchSceneAction("Habitación 1");
+		accion3.setDescription("Ir al sur");
 		elemento4.addAvailableActions(accion3);
 		escena2.addProp(elemento4);
-		ExaminarCaja accion4 = new ExaminarCaja();
+		ExaminarObjetoAction accion4 = new ExaminarObjetoAction();
+		accion4.setDescription("Examinar caja");
+		accion4.setDespuesExaminar("Has cogido una llave que había dentro.");
+		accion4.addElementoAfecta("Caja");
+		accion4.addElementoAfecta("Puerta este");
 		escena2.addAvailableActions(accion3);
 		escena2.addAvailableActions(accion4);
 

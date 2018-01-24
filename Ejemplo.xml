@@ -27,7 +27,7 @@
 		</elemento>
 	</Escena>
 	<Escena>
-		<id>Habitación 2, la buena</id>
+		<id>Habitación 2</id>
 		<description>Esta habitación sólo tiene una salida al sur. En el otro extremo de la habitación hay un cuadro.</description>
 		<elemento>
 			<id>Cuadro</id>
@@ -37,7 +37,10 @@
 			<accion>
 				<tipo>Examinar objeto</tipo>
 				<id>Examninar cuadro</id>
-				<description>Has cogido una llave que había detrás</description>
+				<description>Examinar cuadro</description>
+				<despuesExaminar>Has cogido una llave que había detrás</despuesExaminar>
+				<elementosAfecta>Cuadro</elementosAfecta>
+				<elementosAfecta>Puerta este</elementosAfecta>
 			</accion>
 		</elemento>
 		<elemento>

@@ -7,6 +7,7 @@ import model.*;
 public class SwitchSceneAction extends Interaction implements SceneMessage {
 
 	private String targetSceneId;
+	private String description;
 
 	public SwitchSceneAction(String sceneId) {
 		targetSceneId = sceneId;
@@ -20,13 +21,11 @@ public class SwitchSceneAction extends Interaction implements SceneMessage {
 
 	@Override
 	public String getDescription() {
-		if (targetSceneId == "Habitación 1")
-			return "Ir al sur";
-		if (targetSceneId == "Habitación 2")
-			return "Ir al norte";
-		if (targetSceneId == "Habitación 3")
-			return "Ir al este";
-		return null;
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override

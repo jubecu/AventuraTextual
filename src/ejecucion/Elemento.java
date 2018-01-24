@@ -3,7 +3,6 @@ package ejecucion;
 import actions.Interaction;
 import actions.InteractiveEntityMessage;
 import model.Prop;
-import model.World;
 
 public class Elemento extends Prop {
 
